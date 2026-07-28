@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="it"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Iscriviti alla newsletter Direct Channel per ricevere aggiornamenti, webinar, eventi e contenuti utili per chi lavora nel mondo non profit.">
+  <link rel="icon" type="image/png" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <title>Newsletter Direct Channel | Community Non Profit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --red: #e30613;
+      --red-dark: #b90510;
+      --cream: #faf8f5;
+      --beige: #f4efe8;
+      --paper: #ffffff;
+      --ink: #1a1a1a;
+      --muted: #5c5c5c;
+      --line: #ded5ca;
+      --green: #22c55e;
+      --purple: #a855f7;
+      --yellow: #facc15;
+      --orange: #ff8a3d;
+      --blue: #2165ab;
+      --focus: rgba(34, 197, 94, 0.28);
+      --shadow: 0 24px 72px rgba(48, 31, 24, 0.11);
+      --radius: 16px;
+      --radius-small: 12px;
+      --container-max: 1200px;
+      --page-gutter: 20px;
+      --font-family: "Plus Jakarta Sans", sans-serif;
+      --font-h1: clamp(3.25rem, 6.3vw, 5.65rem);
+      --font-h2: clamp(2.35rem, 4.4vw, 3.8rem);
+      --font-body: clamp(1rem, 1.25vw, 1.125rem);
+      --font-small: 0.8125rem;
+      --hero-blob-yellow-radius: 50%;
+      --hero-blob-green-radius: 50%;
+      --hero-ring-radius: 50%;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--cream);
+      scrollbar-color: var(--yellow) transparent;
+      scrollbar-width: thin;
+    }
+
+    body {
+      margin: 0;
+      overflow-x: clip;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--font-family);
+      font-size: var(--font-body);
+      line-height: 1.5;
+      font-weight: 500;
+      letter-spacing: -0.012em;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    button,
+    input {
+      font-family: var(--font-family);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 1010px;
+      margin-inline: auto;
+      margin-bottom: 24px;
+      font-size: var(--font-h1);
+      line-height: 0.98;
+      font-weight: 800;
+      letter-spacing: -0.045em;
+    }
+
+    h2 {
+      margin-bottom: 18px;
+      font-size: var(--font-h2);
+      line-height: 0.98;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+
+    .wrap {
+      width: 100%;
+      max-width: var(--container-max);
+      margin-inline: auto;
+      padding-left: max(var(--page-gutter), env(safe-area-inset-left, 0px));
+      padding-right: max(var(--page-gutter), env(safe-area-inset-right, 0px));
+    }
+
+    .small-label {
+      margin-bottom: 10px;
+      color: var(--red-dark);
+      font-size: var(--font-small);
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .button,
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      border: 0;
+      border-radius: var(--radius-small);
+      padding: 0 22px;
+      background: var(--purple);
+      color: #fff;
+      cursor: pointer;
+      font: inherit;
+      font-weight: 750;
+      letter-spacing: -0.025em;
+      text-decoration: none;
+      box-shadow: 0 14px 30px rgba(168, 85, 247, 0.22);
+      transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
+    }
+
+    .button:hover,
+    .btn:hover {
+      transform: translateY(-1px);
+      background: #9333ea;
+      box-shadow: 0 16px 34px rgba(168, 85, 247, 0.28);
+    }
+
+    .button.secondary {
+      border: 2px solid rgba(168, 85, 247, 0.35);
+      background: rgba(255, 255, 255, 0.62);
+      color: #7e22ce;
+      box-shadow: none;
+    }
+
+    .button.secondary:hover {
+      border-color: var(--purple);
+      background: rgba(168, 85, 247, 0.08);
+      color: #6d08d9;
+      box-shadow: none;
+    }
+
+    .button:focus-visible,
+    .btn:focus-visible,
+    input:focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 3px;
+    }
+
+    .hero {
+      position: relative;
+      min-height: min(860px, 92svh);
+      overflow: hidden;
+      padding: max(28px, env(safe-area-inset-top, 0px)) 0 clamp(72px, 9vw, 116px);
+      background:
+        linear-gradient(115deg, rgba(250, 248, 245, 0.98) 0%, rgba(250, 248, 245, 0.88) 52%, rgba(244, 239, 232, 0.94) 100%),
+        var(--cream);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: auto -8vw -14vw auto;
+      width: min(620px, 48vw);
+      aspect-ratio: 1;
+      border-radius: var(--hero-blob-yellow-radius);
+      background: rgba(250, 204, 21, 0.22);
+      transform: translate3d(var(--hero-blob-yellow-x, 0), var(--hero-blob-yellow-y, 0), 0) rotate(var(--hero-blob-yellow-rotate, 0deg)) scale(var(--hero-blob-yellow-scale, 1));
+      transform-origin: 52% 48%;
+      will-change: border-radius, transform;
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 14vh auto auto -16vw;
+      width: min(520px, 44vw);
+      aspect-ratio: 1;
+      border-radius: var(--hero-blob-green-radius);
+      background: rgba(34, 197, 94, 0.12);
+      transform: translate3d(var(--hero-blob-green-x, 0), var(--hero-blob-green-y, 0), 0) rotate(var(--hero-blob-green-rotate, 0deg)) scale(var(--hero-blob-green-scale, 1));
+      transform-origin: 48% 52%;
+      will-change: border-radius, transform;
+      pointer-events: none;
+    }
+
+    .hero-header {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      min-height: 44px;
+    }
+
+    .header-logo {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .header-logo img {
+      display: block;
+      width: auto;
+      height: clamp(25px, 3.8vw, 34px);
+      max-width: min(160px, 42vw);
+    }
+
+    .live-status {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 30px;
+      border: 1px solid rgba(22, 101, 52, 0.16);
+      border-radius: 999px;
+      padding: 0 11px;
+      background: rgba(240, 253, 244, 0.72);
+      color: #166534;
+      font-size: var(--font-small);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      line-height: 1;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .live-status::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.12);
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      align-items: center;
+      min-height: min(660px, calc(92svh - 108px));
+      padding-top: clamp(32px, 6vh, 68px);
+    }
+
+    .hero-copy {
+      position: relative;
+      min-width: 0;
+      width: 100%;
+      max-width: 1120px;
+      margin-inline: auto;
+      padding-inline: 0;
+      text-align: center;
+    }
+
+    .hero-copy::after {
+      content: "";
+      position: absolute;
+      right: clamp(-80px, -4vw, -20px);
+      bottom: clamp(-120px, -10vw, -70px);
+      width: clamp(120px, 16vw, 210px);
+      aspect-ratio: 1;
+      border: clamp(18px, 2.4vw, 30px) solid rgba(168, 85, 247, 0.11);
+      border-radius: var(--hero-ring-radius);
+      pointer-events: none;
+      transform: rotate(var(--hero-ring-rotate, 0deg)) scale(var(--hero-ring-scale, 1));
+      will-change: border-radius, transform;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 30px;
+      margin: 0 auto 22px;
+      border: 1px solid rgba(227, 6, 19, 0.16);
+      border-radius: 999px;
+      padding: 0 12px;
+      background: rgba(255, 255, 255, 0.62);
+      color: var(--red-dark);
+      font-size: var(--font-small);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .badge::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--red);
+      box-shadow: 0 0 0 4px rgba(227, 6, 19, 0.09);
+    }
+
+    .hero-title-line,
+    .highlight {
+      display: block;
+      width: max-content;
+      max-width: 100%;
+      margin-inline: auto;
+    }
+
+    .highlight {
+      border-radius: 999px;
+      padding: 0.02em 0.18em 0.12em;
+      background: var(--red);
+      color: #fff;
+      font-size: 1.18em;
+      font-size: calc(var(--font-h1) * 1.18);
+      line-height: 0.95;
+      white-space: nowrap;
+    }
+
+    .hero-lead {
+      max-width: 720px;
+      margin: 0 auto 32px;
+      color: var(--muted);
+      font-size: clamp(1.08rem, 1.55vw, 1.25rem);
+      line-height: 1.58;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .benefits {
+      position: relative;
+      z-index: 2;
+      margin-top: -30px;
+      padding-bottom: clamp(60px, 8vw, 96px);
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .benefit {
+      --benefit-tilt: 0deg;
+      position: relative;
+      min-height: 158px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.72);
+      border-radius: var(--radius);
+      padding: 20px;
+      color: var(--ink);
+      box-shadow: 0 16px 36px rgba(48, 31, 24, 0.08);
+      isolation: isolate;
+      transform: translateZ(0);
+      transition: transform 360ms cubic-bezier(0.2, 0.8, 0.2, 1), border-color 240ms ease, box-shadow 360ms ease;
+    }
+
+    .benefit::before,
+    .benefit::after {
+      content: "";
+      position: absolute;
+      pointer-events: none;
+    }
+
+    .benefit::before {
+      z-index: 0;
+      inset: -1px;
+      background: radial-gradient(circle at 78% 18%, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0) 48%);
+      opacity: 0;
+      transform: scale(0.72);
+      transition: opacity 300ms ease, transform 420ms cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .benefit::after {
+      z-index: 0;
+      top: -38%;
+      left: -38%;
+      width: 28%;
+      height: 176%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.72), transparent);
+      transform: rotate(18deg);
+      transition: left 560ms cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .benefit:nth-child(1) {
+      --benefit-tilt: -0.8deg;
+      background: #eadcf8;
+    }
+
+    .benefit:nth-child(2) {
+      --benefit-tilt: 0.65deg;
+      background: #dcebf8;
+    }
+
+    .benefit:nth-child(3) {
+      --benefit-tilt: -0.55deg;
+      background: #e0f3e6;
+    }
+
+    .benefit:nth-child(4) {
+      --benefit-tilt: 0.8deg;
+      background: #ffe8d7;
+    }
+
+    .benefit-kicker {
+      position: relative;
+      z-index: 1;
+      display: block;
+      margin-bottom: 16px;
+      color: var(--red-dark);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      line-height: 1.2;
+      text-transform: uppercase;
+      transition: transform 320ms cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .benefit p {
+      position: relative;
+      z-index: 1;
+      font-size: clamp(0.98rem, 1.35vw, 1.12rem);
+      line-height: 1.35;
+      font-weight: 800;
+      transition: transform 320ms cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .benefit:hover {
+        border-color: rgba(255, 255, 255, 0.96);
+        box-shadow: 0 26px 52px rgba(48, 31, 24, 0.16);
+        transform: translateY(-10px) rotate(var(--benefit-tilt)) scale(1.025);
+      }
+
+      .benefit:hover::before {
+        opacity: 1;
+        transform: scale(1.08);
+      }
+
+      .benefit:hover::after {
+        left: 118%;
+      }
+
+      .benefit:hover .benefit-kicker {
+        transform: translateY(-2px);
+      }
+
+      .benefit:hover p {
+        transform: translateY(-4px);
+      }
+    }
+
+    .signup {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(80px, 9vw, 118px) 0;
+      background: var(--beige);
+    }
+
+    .signup-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-areas:
+        "copy form"
+        "mascot form";
+      grid-template-columns: minmax(0, 0.76fr) minmax(460px, 1.12fr);
+      grid-template-rows: auto 1fr;
+      column-gap: clamp(44px, 6vw, 78px);
+      row-gap: 28px;
+      align-items: start;
+    }
+
+    .signup-copy {
+      grid-area: copy;
+      max-width: 500px;
+      padding-top: 8px;
+    }
+
+    .signup-copy p:not(.small-label) {
+      max-width: 500px;
+      color: var(--muted);
+      font-size: clamp(1.06rem, 1.45vw, 1.18rem);
+      line-height: 1.62;
+    }
+
+    .signup-form {
+      grid-area: form;
+      border: 1px solid rgba(222, 213, 202, 0.82);
+      border-radius: var(--radius);
+      padding: clamp(28px, 3.3vw, 42px);
+      background: rgba(255, 255, 255, 0.94);
+      box-shadow: var(--shadow);
+    }
+
+    .signup-mascot {
+      position: relative;
+      grid-area: mascot;
+      align-self: end;
+      justify-self: center;
+      width: clamp(190px, 52%, 232px);
+      margin: 28px auto 0;
+      isolation: isolate;
+    }
+
+    .signup-mascot::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      right: -14%;
+      bottom: 3%;
+      width: 82%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: rgba(250, 204, 21, 0.24);
+    }
+
+    .signup-mascot img {
+      display: block;
+      width: 100%;
+      height: auto;
+      filter: drop-shadow(0 18px 24px rgba(48, 31, 24, 0.14));
+    }
+
+    .form-title {
+      margin-bottom: 26px;
+    }
+
+    .form-title h3 {
+      margin-bottom: 8px;
+      font-size: clamp(1.3rem, 2vw, 1.62rem);
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+    }
+
+    .form-title p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 18px;
+      row-gap: 18px;
+    }
+
+    .field {
+      margin: 0;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    .role-field {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--ink);
+      font-size: var(--font-small);
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+
+    .req {
+      color: var(--red);
+    }
+
+    input {
+      width: 100%;
+      min-height: 56px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-small);
+      padding: 0 16px;
+      background: #fff;
+      color: var(--ink);
+      font: inherit;
+      font-size: var(--font-body);
+      letter-spacing: -0.02em;
+      transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+    }
+
+    input::placeholder {
+      color: #8b8278;
+    }
+
+    input:hover {
+      border-color: #cfc3b6;
+      background: #fffdfb;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: var(--green);
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.12);
+    }
+
+    .privacy-note {
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.55;
+    }
+
+    .privacy-note a {
+      color: var(--red-dark);
+      font-weight: 800;
+      text-underline-offset: 3px;
+    }
+
+    .btn {
+      width: 100%;
+      margin-top: 22px;
+    }
+
+    .status {
+      display: none;
+      margin-top: 16px;
+      border-radius: var(--radius);
+      padding: 13px 14px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .status.show {
+      display: block;
+    }
+
+    .status.ok {
+      border: 1px solid rgba(34, 197, 94, 0.26);
+      background: #f0fdf4;
+      color: #166534;
+    }
+
+    .status.err {
+      border: 1px solid rgba(227, 6, 19, 0.22);
+      background: #fef2f2;
+      color: #991b1b;
+    }
+
+    .celebration-canvas {
+      position: fixed;
+      z-index: 20000;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .community {
+      padding: clamp(82px, 9vw, 118px) 0;
+      background: var(--cream);
+    }
+
+    .community-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.84fr) minmax(440px, 1fr);
+      gap: clamp(48px, 6vw, 78px);
+      align-items: center;
+    }
+
+    .community-copy {
+      max-width: 520px;
+    }
+
+    .community-copy p:not(.small-label) {
+      max-width: 520px;
+      color: var(--muted);
+      font-size: clamp(1.06rem, 1.45vw, 1.18rem);
+      line-height: 1.62;
+    }
+
+    .community-copy .button {
+      margin-top: 28px;
+    }
+
+    .community-media {
+      position: relative;
+      margin: 0;
+      border-radius: var(--radius);
+      overflow: hidden;
+      aspect-ratio: 1.433 / 1;
+      background: #0d85d1;
+      box-shadow: 0 22px 60px rgba(33, 101, 171, 0.2);
+    }
+
+    .community-media img {
+      display: block;
+      width: 125%;
+      max-width: none;
+      height: 100%;
+      object-fit: cover;
+      object-position: left center;
+    }
+
+    .footer {
+      padding: 34px 0 42px;
+      background: #fff;
+      border-top: 1px solid rgba(222, 213, 202, 0.72);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      text-align: center;
+    }
+
+    .footer-logo img {
+      display: block;
+      width: auto;
+      height: clamp(30px, 5vw, 42px);
+      max-width: min(220px, 72vw);
+    }
+
+    .footer-copy {
+      color: var(--muted);
+      font-size: var(--font-small);
+      font-weight: 700;
+    }
+
+    .footer-copy a {
+      color: var(--red-dark);
+      text-underline-offset: 3px;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .signup-grid,
+      .community-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-grid {
+        min-height: 0;
+      }
+
+      .hero-copy {
+        padding-right: 0;
+      }
+
+      .signup-grid {
+        grid-template-areas:
+          "copy"
+          "form"
+          "mascot";
+        grid-template-rows: auto;
+        row-gap: 32px;
+      }
+
+      .signup-mascot {
+        justify-self: center;
+        width: min(180px, 46vw);
+        margin: 0 auto -20px;
+      }
+
+      .benefits {
+        margin-top: 0;
+      }
+
+      .benefit-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 680px) {
+      :root {
+        --page-gutter: 18px;
+        --font-h1: clamp(2.2rem, 10.4vw, 2.65rem);
+        --font-h2: clamp(2.1rem, 10vw, 2.75rem);
+      }
+
+      .hero {
+        padding-bottom: 40px;
+      }
+
+      .hero-grid {
+        padding-top: 48px;
+      }
+
+      .hero-copy::after {
+        right: -42px;
+        bottom: -88px;
+        width: 118px;
+      }
+
+      .hero-header {
+        align-items: flex-start;
+      }
+
+      .live-status {
+        font-size: 0.68rem;
+      }
+
+      .badge {
+        white-space: normal;
+      }
+
+      .highlight {
+        max-width: none;
+        font-size: 1em;
+        white-space: nowrap;
+      }
+
+      .hero-actions,
+      .hero-actions .button,
+      .hero-actions .secondary {
+        width: 100%;
+      }
+
+      .benefit-grid,
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .benefit {
+        min-height: 136px;
+      }
+
+      .field.full {
+        grid-column: auto;
+      }
+
+      .signup-form {
+        padding: 24px 20px;
+      }
+
+      .signup-grid {
+        grid-template-areas:
+          "copy"
+          "form";
+      }
+
+      .signup-mascot {
+        position: absolute;
+        z-index: 2;
+        top: -30px;
+        right: max(var(--page-gutter), env(safe-area-inset-right, 0px));
+        width: clamp(116px, 38vw, 145px);
+        margin: 0;
+        pointer-events: none;
+      }
+
+      input {
+        min-height: 52px;
+      }
+
+      .role-field {
+        grid-column: auto;
+      }
+
+      .community-grid {
+        gap: 34px;
+      }
+
+      .community-copy {
+        max-width: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .hero::before,
+      .hero::after,
+      .hero-copy::after {
+        will-change: auto;
+      }
+
+      .benefit,
+      .benefit::before,
+      .benefit::after,
+      .benefit-kicker,
+      .benefit p {
+        transition: none;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .highlight {
+        padding-inline: 0.14em;
+        font-size: 0.92em;
+      }
+
+      .signup-copy .small-label {
+        font-size: 0.72rem;
+        letter-spacing: 0.08em;
+      }
+
+      .signup-mascot {
+        top: -22px;
+        right: 10px;
+        width: clamp(104px, 34vw, 116px);
+      }
+    }
+
+    #marketingEditorBar {
+      position: sticky;
+      top: 0;
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      min-height: 40px;
+      padding: 6px max(12px, env(safe-area-inset-right, 0px)) 6px max(12px, env(safe-area-inset-left, 0px));
+      background: #050505;
+      color: #fff;
+      font-size: 0.75rem;
+      line-height: 1;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+    }
+
+    .marketing-editor-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 0;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    #marketingEditorStatus {
+      overflow: hidden;
+      max-width: 34vw;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-overflow: ellipsis;
+      text-transform: none;
+      white-space: nowrap;
+    }
+
+    .marketing-editor-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 6px;
+    }
+
+    .marketing-editor-button,
+    .marketing-editor-upload {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 28px;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      border-radius: 5px;
+      padding: 6px 9px;
+      background: rgba(255, 255, 255, 0.09);
+      color: #fff;
+      cursor: pointer;
+      font-size: 0.72rem;
+      font-weight: 800;
+      line-height: 1;
+      text-decoration: none;
+      transition: background 160ms ease, border-color 160ms ease;
+    }
+
+    .marketing-editor-button:hover,
+    .marketing-editor-upload:hover,
+    .marketing-editor-button:focus-visible,
+    .marketing-editor-upload:focus-visible {
+      border-color: rgba(255, 255, 255, 0.56);
+      background: rgba(255, 255, 255, 0.18);
+      outline: none;
+    }
+
+    .marketing-editor-button.primary {
+      border-color: var(--yellow);
+      background: var(--yellow);
+      color: var(--ink);
+    }
+
+    .marketing-editor-button.danger {
+      border-color: rgba(227, 6, 19, 0.82);
+    }
+
+    .marketing-editor-upload input {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+    }
+
+    [data-marketing-editable="true"] {
+      border-radius: 5px;
+      outline: 2px solid transparent;
+      outline-offset: 3px;
+      transition: background 160ms ease, outline-color 160ms ease;
+    }
+
+    [data-marketing-editable="true"]:hover,
+    [data-marketing-editable="true"]:focus {
+      background: rgba(250, 204, 21, 0.18);
+      outline-color: rgba(250, 204, 21, 0.78);
+    }
+
+    #heroMascotImg {
+      cursor: pointer;
+    }
+
+    @media (max-width: 680px) {
+      #marketingEditorBar {
+        position: relative;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .marketing-editor-title {
+        align-items: flex-start;
+        flex-direction: column;
+        white-space: normal;
+      }
+
+      #marketingEditorStatus {
+        max-width: 100%;
+        white-space: normal;
+      }
+
+      .marketing-editor-actions {
+        justify-content: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <main>
+    <section class="hero" aria-label="Newsletter Direct Channel">
+      <header class="hero-header wrap" aria-label="Intestazione">
+        <a class="header-logo" href="#" aria-label="Direct Channel">
+          <img src="assets/direct-channel-logo.png" alt="Direct Channel" width="300" height="64">
+        </a>
+        <div class="live-status">Newsletter attiva</div>
+      </header>
+
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <div class="badge">Direct Channel Community</div>
+          <h1><span class="hero-title-line">Entra nel mondo di</span><span class="highlight">Direct Channel</span></h1>
+          <p class="hero-lead">Iscriviti alla nostra newsletter e lasciati ispirare da nuovi spunti, esperienze condivise e inviti alle iniziative della community.&nbsp;</p>
+          <div class="hero-actions">
+            <a class="button" href="#iscrizione">Non perderti le novità</a>
+            <a class="button secondary" href="#community">Entra nella community</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="benefits" aria-label="Vantaggi della newsletter">
+      <div class="wrap benefit-grid">
+        <article class="benefit">
+          <span class="benefit-kicker">Prodotti</span>
+          <p>Aggiornamenti su Mentor e DirectSense.</p>
+        </article>
+        <article class="benefit">
+          <span class="benefit-kicker">Webinar</span>
+          <p>Webinar con casi reali e approfondimenti.</p>
+        </article>
+        <article class="benefit">
+          <span class="benefit-kicker">Eventi</span>
+          <p>Eventi della community durante l’anno.</p>
+        </article>
+        <article class="benefit">
+          <span class="benefit-kicker">Novità</span>
+          <p>Novità e aggiornamenti dal mondo Direct Channel.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="signup" id="iscrizione" aria-label="Form di iscrizione alla newsletter">
+      <div class="wrap signup-grid">
+        <div class="signup-copy">
+          <p class="small-label">Non perderti le novità</p>
+          <h2>Iscriviti alla newsletter</h2>
+          <p>Completa l'iscrizione per ricevere nella tua casella email gli aggiornamenti su tutte le novità targate Direct Channel e gli appuntamenti da non perdere!</p>
+        </div>
+
+        <div class="signup-form">
+          <div class="form-title">
+            <p class="small-label">Form di iscrizione</p>
+            <h3>Lasciaci i tuoi contatti</h3>
+            <p>Compila i campi obbligatori per entrare nella lista.</p>
+          </div>
+
+          <form id="contactForm" novalidate="" action="https://docs.google.com/forms/d/e/1FAIpQLSc5WzEi9w225yHY8s1AFaOG8PpE8F9mY-vkYJYzneMDBwwDBw/formResponse" method="POST" target="googleFormTarget">
+            <input id="newsletter" name="entry.1618047083" type="hidden" value="Sì, acconsento">
+            <div class="form-grid">
+              <p class="field">
+                <label for="nome">Nome <span class="req">*</span></label>
+                <input id="nome" name="entry.2092238618" type="text" autocomplete="given-name" placeholder="Mario">
+              </p>
+              <p class="field">
+                <label for="cognome">Cognome <span class="req">*</span></label>
+                <input id="cognome" name="entry.1479261224" type="text" autocomplete="family-name" placeholder="Rossi">
+              </p>
+              <p class="field">
+                <label for="email">Email <span class="req">*</span></label>
+                <input id="email" name="entry.1556369182" type="email" autocomplete="email" placeholder="nome@organizzazione.it">
+              </p>
+              <p class="field">
+                <label for="organizzazione">Organizzazione <span class="req">*</span></label>
+                <input id="organizzazione" name="entry.479301265" type="text" autocomplete="organization" placeholder="Nome organizzazione">
+              </p>
+              <p class="field role-field">
+                <label for="ruolo">Ruolo <span class="req">*</span></label>
+                <input id="ruolo" name="entry.2104822976" type="text" autocomplete="organization-title" placeholder="Es. Fundraising manager">
+              </p>
+            </div>
+
+            <p class="privacy-note">
+              I dati saranno trattati da Direct Channel nel rispetto del Regolamento (UE) 2016/679 (GDPR) esclusivamente per l’invio della newsletter. Consulta la
+              <a href="https://www.abbonamenti.it/immagini/pdf/privacydc.pdf" target="_blank" rel="noopener noreferrer">privacy policy</a>.
+            </p>
+
+            <button class="btn" id="submitBtn" type="submit">Iscriviti</button>
+            <div class="status" id="status" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+
+        <figure class="signup-mascot" aria-label="Mascotte Direct Channel">
+          <img src="assets/mascotte-direct-channel-cutout-crop.png" alt="Mascotte Direct Channel con occhiali e maglia rossa" width="900" height="876" loading="lazy" decoding="async">
+        </figure>
+      </div>
+    </section>
+
+    <section class="community" id="community" aria-label="Direct Channel Community">
+      <div class="wrap community-grid">
+        <div class="community-copy">
+          <p class="small-label">Community</p>
+          <h2>Uno spazio sempre aperto per te</h2>
+          <p>Confrontati con la community: lo spazio perfetto per costruire relazioni e crescere insieme. Puoi condividere la tua esperienza, partecipare alle conversazioni e trovare nuove idee.</p>
+          <a class="button" href="https://supporto.directchannel.it/portal/it/community/direct-channel-community" target="_blank" rel="noopener noreferrer">Entra nella community</a>
+        </div>
+
+        <figure class="community-media">
+          <img src="assets/community-balloons.jpg" alt="Mongolfiere colorate in volo sotto un cielo azzurro" width="1600" height="893" loading="lazy" decoding="async">
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner wrap">
+      <a class="footer-logo" href="#" aria-label="Direct Channel">
+        <img src="assets/direct-channel-logo.png" alt="Direct Channel" width="300" height="64" loading="lazy" decoding="async">
+      </a>
+      <p class="footer-copy">
+        Direct Channel S.p.A. ·
+        <a href="https://www.abbonamenti.it/immagini/pdf/privacydc.pdf" target="_blank" rel="noopener noreferrer">Privacy policy</a>
+        ·
+        <a href="https://www.iubenda.com/privacy-policy/8187956/cookie-policy" target="_blank" rel="noopener noreferrer">Cookie policy</a>
+      </p>
+    </div>
+  </footer>
+
+  <canvas class="celebration-canvas" id="celebrationCanvas" aria-hidden="true"></canvas>
+  <iframe name="googleFormTarget" id="googleFormTarget" style="display:none;" title="Form submit target"></iframe>
+
+  <script>
+    var googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSc5WzEi9w225yHY8s1AFaOG8PpE8F9mY-vkYJYzneMDBwwDBw/formResponse";
+    var form = document.getElementById("contactForm");
+    var statusEl = document.getElementById("status");
+    var submitBtn = document.getElementById("submitBtn");
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    var celebrationCanvas = document.getElementById("celebrationCanvas");
+    var celebrationContext = celebrationCanvas ? celebrationCanvas.getContext("2d") : null;
+    var celebrationFrame = null;
+    var celebrationReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    form.action = googleFormUrl;
+    form.method = "POST";
+    form.target = "googleFormTarget";
+
+    function showStatus(type, message) {
+      statusEl.className = "status show " + type;
+      statusEl.textContent = message;
+    }
+
+    function validate() {
+      var nome = document.getElementById("nome");
+      var cognome = document.getElementById("cognome");
+      var email = document.getElementById("email");
+      var organizzazione = document.getElementById("organizzazione");
+      var ruolo = document.getElementById("ruolo");
+
+      if (!nome.value.trim()) {
+        nome.focus();
+        showStatus("err", "Inserisci il tuo nome.");
+        return false;
+      }
+
+      if (!cognome.value.trim()) {
+        cognome.focus();
+        showStatus("err", "Inserisci il tuo cognome.");
+        return false;
+      }
+
+      if (!email.value.trim() || !emailPattern.test(email.value.trim())) {
+        email.focus();
+        showStatus("err", "Inserisci un indirizzo email valido.");
+        return false;
+      }
+
+      if (!organizzazione.value.trim()) {
+        organizzazione.focus();
+        showStatus("err", "Inserisci la tua organizzazione.");
+        return false;
+      }
+
+      if (!ruolo.value.trim()) {
+        ruolo.focus();
+        showStatus("err", "Inserisci il tuo ruolo.");
+        return false;
+      }
+
+      return true;
+    }
+
+    function drawSparkle(context, size, color) {
+      context.fillStyle = color;
+      context.beginPath();
+      context.moveTo(0, -size);
+      context.lineTo(size * 0.24, -size * 0.24);
+      context.lineTo(size, 0);
+      context.lineTo(size * 0.24, size * 0.24);
+      context.lineTo(0, size);
+      context.lineTo(-size * 0.24, size * 0.24);
+      context.lineTo(-size, 0);
+      context.lineTo(-size * 0.24, -size * 0.24);
+      context.closePath();
+      context.fill();
+    }
+
+    function launchNewsletterCelebration() {
+      if (!celebrationCanvas || !celebrationContext || celebrationReducedMotion.matches) return;
+
+      if (celebrationFrame) {
+        window.cancelAnimationFrame(celebrationFrame);
+      }
+
+      var pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+      var viewportWidth = window.innerWidth;
+      var viewportHeight = window.innerHeight;
+      var buttonRect = submitBtn.getBoundingClientRect();
+      var originX = buttonRect.left + (buttonRect.width / 2);
+      var originY = buttonRect.top + (buttonRect.height / 2);
+      var colors = ["#e30613", "#a855f7", "#facc15", "#22c55e", "#ff8a3d", "#2165ab", "#ffffff"];
+      var particleCount = viewportWidth < 680 ? 64 : 92;
+      var particles = [];
+      var startTime = window.performance.now();
+
+      celebrationCanvas.width = Math.round(viewportWidth * pixelRatio);
+      celebrationCanvas.height = Math.round(viewportHeight * pixelRatio);
+      celebrationContext.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+
+      for (var i = 0; i < particleCount; i += 1) {
+        particles.push({
+          color: colors[i % colors.length],
+          kind: i % 5 === 0 ? "sparkle" : "confetti",
+          rotation: Math.random() * Math.PI,
+          rotationSpeed: (Math.random() - 0.5) * 12,
+          size: 5 + (Math.random() * 8),
+          velocityX: (Math.random() - 0.5) * (viewportWidth < 680 ? 330 : 560),
+          velocityY: -290 - (Math.random() * 390)
+        });
+      }
+
+      function renderCelebration(timestamp) {
+        var elapsed = (timestamp - startTime) / 1000;
+        var opacity = Math.max(0, 1 - Math.max(0, elapsed - 1.25) / 0.9);
+
+        celebrationContext.clearRect(0, 0, viewportWidth, viewportHeight);
+
+        particles.forEach(function (particle) {
+          var x = originX + (particle.velocityX * elapsed);
+          var y = originY + (particle.velocityY * elapsed) + (390 * elapsed * elapsed);
+
+          celebrationContext.save();
+          celebrationContext.globalAlpha = opacity;
+          celebrationContext.translate(x, y);
+          celebrationContext.rotate(particle.rotation + (particle.rotationSpeed * elapsed));
+
+          if (particle.kind === "sparkle") {
+            drawSparkle(celebrationContext, particle.size, particle.color);
+          } else {
+            celebrationContext.fillStyle = particle.color;
+            celebrationContext.fillRect(-particle.size * 0.5, -particle.size * 0.28, particle.size, particle.size * 0.56);
+          }
+
+          celebrationContext.restore();
+        });
+
+        if (elapsed < 2.15) {
+          celebrationFrame = window.requestAnimationFrame(renderCelebration);
+        } else {
+          celebrationContext.clearRect(0, 0, viewportWidth, viewportHeight);
+          celebrationFrame = null;
+        }
+      }
+
+      celebrationFrame = window.requestAnimationFrame(renderCelebration);
+    }
+
+    function submitNewsletter() {
+      statusEl.className = "status";
+
+      if (!validate()) return;
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Invio in corso...";
+      form.submit();
+
+      window.setTimeout(function () {
+        form.reset();
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Iscriviti";
+        showStatus("ok", "Iscrizione ricevuta. Ti terremo aggiornato sulle prossime novità Direct Channel.");
+        launchNewsletterCelebration();
+      }, 1000);
+    }
+
+    submitBtn.addEventListener("click", function (event) {
+      event.preventDefault();
+      submitNewsletter();
+    });
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      submitNewsletter();
+    });
+  </script>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var hero = document.querySelector(".hero");
+      var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      var framePending = false;
+
+      if (!hero || reducedMotion.matches) return;
+
+      function clamp(value) {
+        return Math.min(1, Math.max(0, value));
+      }
+
+      function organicRadius(amount, inverted) {
+        var direction = inverted ? -1 : 1;
+        return [
+          50 + (11 * amount * direction),
+          50 - (9 * amount * direction),
+          50 + (7 * amount * direction),
+          50 - (6 * amount * direction)
+        ].join("% ") + "% / " + [
+          50 - (8 * amount * direction),
+          50 + (10 * amount * direction),
+          50 - (6 * amount * direction),
+          50 + (7 * amount * direction)
+        ].join("% ") + "%";
+      }
+
+      function updateBlobMorph() {
+        var heroRect = hero.getBoundingClientRect();
+        var heroProgress = clamp(-heroRect.top / Math.max(hero.offsetHeight * 0.76, 1));
+        var heroMorph = Math.sin(heroProgress * Math.PI * 0.5);
+
+        root.style.setProperty("--hero-blob-yellow-radius", organicRadius(heroMorph, false));
+        root.style.setProperty("--hero-blob-green-radius", organicRadius(heroMorph, true));
+        root.style.setProperty("--hero-ring-radius", organicRadius(heroMorph * 0.82, true));
+        root.style.setProperty("--hero-blob-yellow-x", (-34 * heroMorph) + "px");
+        root.style.setProperty("--hero-blob-yellow-y", (-22 * heroMorph) + "px");
+        root.style.setProperty("--hero-blob-yellow-rotate", (-13 * heroMorph) + "deg");
+        root.style.setProperty("--hero-blob-yellow-scale", 1 + (0.08 * heroMorph));
+        root.style.setProperty("--hero-blob-green-x", (28 * heroMorph) + "px");
+        root.style.setProperty("--hero-blob-green-y", (18 * heroMorph) + "px");
+        root.style.setProperty("--hero-blob-green-rotate", (16 * heroMorph) + "deg");
+        root.style.setProperty("--hero-blob-green-scale", 1 + (0.1 * heroMorph));
+        root.style.setProperty("--hero-ring-rotate", (22 * heroMorph) + "deg");
+        root.style.setProperty("--hero-ring-scale", 1 + (0.07 * heroMorph));
+
+        framePending = false;
+      }
+
+      function requestBlobUpdate() {
+        if (framePending) return;
+        framePending = true;
+        window.requestAnimationFrame(updateBlobMorph);
+      }
+
+      window.addEventListener("scroll", requestBlobUpdate, { passive: true });
+      window.addEventListener("resize", requestBlobUpdate);
+      updateBlobMorph();
+    })();
+  </script>
+  
+
+
+</body></html>
+
